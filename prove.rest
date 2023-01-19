@@ -33,3 +33,39 @@ Content-type: application/json
         }
       ]   
 }
+
+###
+GET https://cse341-project-2.onrender.com/user 
+### 
+GET https://cse341-project-2.onrender.com/user/63c9629eae95064f8aac80bc
+
+### 
+GET https://cse341-project-2.onrender.com/contacts/63c9629eae95064f8aac80bd
+
+### 
+POST https://cse341-project-2.onrender.com/user HTTP/1.1 
+Content-type: application/json
+
+{
+    "firstName":"Lucas",
+    "lastName":"Oliveira",
+    "username":"lucoli",
+    "password":"asdfgh",
+    "email":"luc@example.com",
+    "phoneNumber":"333-333-333",
+    "country":"Brasil",
+    "goals":[
+        {
+            "goalName":"travel to USA",
+            "startDate":"01-01-2023",
+            "endDate":"03-15-2023",
+            "plan":"get visa"
+          
+        },{
+            "goalName":"Start collage",
+            "startDate":"01-01-2023",
+            "endDate":"06-01-2023",
+            "plan":"study for the exam"
+        }
+      ]   
+}
