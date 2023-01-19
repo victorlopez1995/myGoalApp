@@ -1,0 +1,96 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "Description",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/user/": {
+      "get": {
+        "tags":["get user"],
+        "summary":"get all users",
+        "description": "This is for when admin wants to look all infomation about users",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "tags":["create user"],
+        "summary":"create new user",
+        "description": "This is for when user create an account",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "Sarah"
+                },
+                "lastName": {
+                  "example": "Carter"
+                },
+                "userName": {
+                  "example": "sarcar"
+                },
+                "password": {
+                  "example": "zxcvb"
+                },
+                "email": {
+                  "example": "sarcar@example.com"
+                },
+                "phoneNumber": {
+                  "example": "444-444-444"
+                },
+                "country": {
+                  "example": "USA"
+                },
+                "goals":{
+                  "example": [{
+                    "goalName":"go to the mission",
+                    "startDate":"08-01-2023",
+                    "endDate":"02-01-2025",
+                    "plan":"prepare my documents"
+                  }] 
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "tags":["get user"],
+        "description": "This is for when admin wants to look infomation about a specific user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}
