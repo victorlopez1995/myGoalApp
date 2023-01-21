@@ -14,7 +14,7 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to find a user.');
+    res.status(400).json('Must use a valid user id to find a user.');
   }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -47,7 +47,7 @@ const getSingle = async (req, res, next) => {
 
   const updateSingle = async (req, res, next) =>{
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid contact id to find a user.');
+      res.status(400).json('Must use a valid user id to find a user.');
     }else{
     const userId = new ObjectId(req.params.id);
     const contact = req.body;
@@ -67,7 +67,7 @@ const getSingle = async (req, res, next) => {
 
   const deleteSingle = async (req, res, next) =>{
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid contact id to find a user.');
+      res.status(400).json('Must use a valid user id to find a user.');
     }
     const userId = new ObjectId(req.params.id);
     const contact = req.body;
