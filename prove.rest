@@ -11,16 +11,16 @@ POST http://localhost:3000/user HTTP/1.1
 Content-type: application/json
 
 {
-    "firstName":"Lucas",
+    "firstName":"jacob",
     "lastName":"Oliveira",
-    "username":"lucoli",
+    "userName":"lucoli",
     "password":"asdfgh",
     "email":"luc@example.com",
     "phoneNumber":"333-333-333",
     "country":"Brasil",
     "goals":[
         {
-            "goalName":"travel to USA",
+            "goalName":"create an account",
             "startDate":"01-01-2023",
             "endDate":"03-15-2023",
             "plan":"get visa"
@@ -33,6 +33,37 @@ Content-type: application/json
         }
       ]   
 }
+
+###
+PUT http://localhost:3000/user/dsfsdfsdf HTTP/1.1 
+Content-type: application/json
+
+{
+    "firstName":"jacob",
+    "lastName":"Oliveira",
+    "userName":"lucoli35",
+    "password":"asdfgh",
+    "email":"luc@example.com",
+    "phoneNumber":"333-333-333",
+    "country":"Brasil",
+    "goals":[
+        {
+            "goalName":"create an account",
+            "startDate":"01-01-2023",
+            "endDate":"03-15-2023",
+            "plan":"get visa"
+          
+        },{
+            "goalName":"Start collage",
+            "startDate":"01-01-2023",
+            "endDate":"06-01-2023",
+            "plan":"study for the exam"
+        }
+      ]   
+}
+
+### 
+DELETE http://localhost:3000/user/63c9cc54ecac4b74c25a06da
 
 ###
 GET https://cse341-project-2.onrender.com/user 
@@ -49,7 +80,7 @@ Content-type: application/json
 {
     "firstName":"Lucas",
     "lastName":"Oliveira",
-    "username":"lucoli",
+    "userName":"lucoli",
     "password":"asdfgh",
     "email":"luc@example.com",
     "phoneNumber":"333-333-333",
@@ -69,3 +100,33 @@ Content-type: application/json
         }
       ]   
 }
+###
+PUT https://cse341-project-2.onrender.com/user/dsfsdfsdf HTTP/1.1 
+Content-type: application/json
+
+{
+    "firstName":"jacob",
+    "lastName":"Oliveira",
+    "userName":"lucoli35",
+    "password":"asdfgh",
+    "email":"luc@example.com",
+    "phoneNumber":"333-333-333",
+    "country":"Brasil",
+    "goals":[
+        {
+            "goalName":"create an account",
+            "startDate":"01-01-2023",
+            "endDate":"03-15-2023",
+            "plan":"get visa"
+          
+        },{
+            "goalName":"Start collage",
+            "startDate":"01-01-2023",
+            "endDate":"06-01-2023",
+            "plan":"study for the exam"
+        }
+      ]   
+}
+
+### 
+DELETE https://cse341-project-2.onrender.com/user/63c9cc54ecac4b74c25a06da
