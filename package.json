@@ -2,7 +2,7 @@
   "name": "mygoalapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "nodemon run app.js",
     "swagger-autogen": "node ./swagger.js",
@@ -23,6 +23,7 @@
     "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.12.0",
     "mongodb": "^4.13.0",
     "nodemon": "^2.0.20",
     "swagger-ui-express": "^4.6.0",
