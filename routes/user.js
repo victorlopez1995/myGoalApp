@@ -7,7 +7,9 @@ router.get('/', userController.getAll);
 
 router.get('/:id', userController.getSingle);
 
-router.post('/',validation.saveUser, userController.createSingle);
+router.post('/',validation.saveUser, userController.createSingle,  (req, res) => {
+    console.log("hola");
+});
 
 router.put('/:id',validation.saveUser, userController.updateSingle);
 

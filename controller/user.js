@@ -1,5 +1,8 @@
 const mongodb = require("../db/mongodb");
 const ObjectId = require('mongodb').ObjectId;
+const passwordUtil = require('../util/passwordComplexityCheck');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const getAll = async (req, res, next) => {
     const result = await mongodb.getDb()
@@ -32,12 +35,29 @@ const getSingle = async (req, res, next) => {
   };
 
   const createSingle = async (req, res, next) => {
-    const contact = req.body;
-    const createContact = await mongodb
+    const password = req.body.password;
+    const passwordCheck = passwordUtil.passwordPass(password);
+    if (passwordCheck.error) {
+      res.status(400).send({ message: passwordCheck.error });
+      return;
+    }
+    const hash = bcrypt.hashSync(req.body.password, saltRounds);
+    const user = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      userName: req.body.userName,
+      password: hash,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+      country: req.body.country,
+      goals: req.body.goals
+    };
+
+    const createUser = await mongodb
     .getDb()
     .db()
     .collection('user')
-    .insertOne(contact).then(result => {
+    .insertOne(user).then(result => {
       res.status(201).json(result);
     })
     .catch(error => {
@@ -49,13 +69,29 @@ const getSingle = async (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid user id to find a user.');
     }else{
+      const password = req.body.password;
+      const passwordCheck = passwordUtil.passwordPass(password);
+      if (passwordCheck.error) {
+        res.status(400).send({ message: passwordCheck.error });
+        return;
+      }
     const userId = new ObjectId(req.params.id);
-    const contact = req.body;
+    const hash = bcrypt.hashSync(req.body.password, saltRounds);
+    const user = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      userName: req.body.userName,
+      password: hash,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+      country: req.body.country,
+      goals: req.body.goals
+    };
     const update = await mongodb
     .getDb()
     .db()
     .collection('user')
-    .replaceOne({_id: userId}, contact).then(result =>{
+    .replaceOne({_id: userId}, user).then(result =>{
       res.status(204).send();
     })
     .catch(error => {
