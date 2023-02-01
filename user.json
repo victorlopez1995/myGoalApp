@@ -6,26 +6,7 @@
       "password":"123456",
       "email":"vic@example.com",
       "phoneNumber":"111-111-111",
-      "country":"Colombia",
-      "goals":[
-          {
-            "goalName":"buy a new car",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"save money"
-          
-          },{
-            "goalName":"Start collage",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"study for the exam"
-          },{
-            "goalName":"go",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"save money"
-          }
-      ]
+      "country":"Colombia"
     },
   "user1":{
       "firstName":"Wilmer",
@@ -34,25 +15,6 @@
       "password":"qwerty",
       "email":"wil@example.com",
       "phoneNumber":"222-222-222",
-      "country":"Colombia",
-      "goals":[
-          {
-            "goalName":"start a new business",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"save money"
-          
-          },{
-            "goalName":"Start collage",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"study for the exam"
-          },{
-            "goalName":"go",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"save money"
-          }
-      ]
+      "country":"Colombia"
     }
 }

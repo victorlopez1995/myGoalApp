@@ -7,12 +7,7 @@ const saveUser = (req, res, next) => {
     userName: 'required|string',
     password: 'required|min:6',
     email: 'required|email',
-    phoneNumber: 'required|string',
-    country: 'required|string',
-    'goals.*.goalName': 'required|string',
-    'goals.*.startDate': 'required|string',
-    'goals.*.endDate': 'required|string',
-    'goals.*.plan': 'required|string'
+    phoneNumber: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

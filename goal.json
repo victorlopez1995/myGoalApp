@@ -1,0 +1,44 @@
+{
+    "goal":{
+        "userName":"viclop",
+        "goalName":"buy a new car",
+        "startDate":"01-01-2023",
+        "endDate":"06-01-2023",
+        "plan":"save money"
+      },
+      "goal2":{
+        "userName":"viclop",
+        "goalName":"Start collage",
+        "startDate":"01-01-2023",
+        "endDate":"06-01-2023",
+        "plan":"study for the exam"
+      },
+      "goal3":{
+        "userName":"viclop",
+        "goalName":"go",
+        "startDate":"01-01-2023",
+        "endDate":"06-01-2023",
+        "plan":"save money"
+      },
+      "goal4":{
+        "userName":"wilped",
+        "goalName":"start a new business",
+        "startDate":"01-01-2023",
+        "endDate":"06-01-2023",
+        "plan":"save money"
+      },
+      "goal5":{
+        "userName":"wilped",
+        "goalName":"Start collage",
+        "startDate":"01-01-2023",
+        "endDate":"06-01-2023",
+        "plan":"study for the exam"
+      },
+      "goal6":{
+        "userName":"wilped",
+        "goalName":"go",
+        "startDate":"01-01-2023",
+        "endDate":"06-01-2023",
+        "plan":"save money"
+      }
+}

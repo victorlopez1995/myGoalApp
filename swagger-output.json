@@ -185,7 +185,152 @@
       "delete": {
         "tags":["change user db"],
         "summary":"delete user information",
-        "description": "This is for when admin or user wants to information",
+        "description": "This is for when admin or user wants to delete user information",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/goal/": {
+      "get": {
+        "tags":["get goal"],
+        "summary":"get all user's goals",
+        "description": "This is for when admin wants to look all infomation about all goals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags":["change goal db"],
+        "summary":"create new goal",
+        "description": "This is for when user create a new goal",
+        "parameters": [
+          {
+            "name": "goal",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userName": {
+                  "example": "sarcar"
+                },
+                "goalName": {
+                  "example": "lose weight"
+                },
+                "startDate": {
+                  "example": "01-01-2023"
+                },
+                "endDate": {
+                  "example": "01-01-2024"
+                },
+                "plan": {
+                  "example": "go to the gym"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          }
+        }
+      }
+    },
+    "/goal/{id}": {
+      "get": {
+        "tags":["get goal"],
+        "description": "This is for when admin wants to look infomation about a specific goal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags":["change goal db"],
+        "summary":"edit goal information",
+        "description": "This is for when user wants to update goal information",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },{
+            "name": "goal",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userName": {
+                  "example": "sarcar"
+                },
+                "goalName": {
+                  "example": "lose weight"
+                },
+                "startDate": {
+                  "example": "01-01-2023"
+                },
+                "endDate": {
+                  "example": "01-01-2024"
+                },
+                "plan": {
+                  "example": "go to the gym"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          }
+        }
+      },
+      "delete": {
+        "tags":["change goal db"],
+        "summary":"delete goal information",
+        "description": "This is for when admin or user wants to delete goal information",
         "parameters": [
           {
             "name": "id",

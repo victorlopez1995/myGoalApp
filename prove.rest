@@ -3,21 +3,9 @@ GET http://localhost:3000/user
 ### 
 GET http://localhost:3000/user/63c9629eae95064f8aac80bc
 
-### 
-GET http://localhost:3000/contacts/63c9629eae95064f8aac80bd
-
 ###
-curl --request POST \
-  --url 'https://dev-yh75rxcva3pb3wcs.us.auth0.com/oauth/token' \
-  --header 'content-type: application/x-www-form-urlencoded' \
-  --data grant_type=client_credentials \
-  --data client_id=NpKlginJ9TyKX0k9Kkjsu12ItMB5Xx0W \
-  --data client_secret=TnPYhGwUoe0OfhRg1R2rt1AMasM6XmsAgEheXXutoEv2Nee2XGD_qD7ukPj_Dx9n \
-  --data audience=63d1df66167f2127cf2de0eb
-### 
 POST http://localhost:3000/user HTTP/1.1 
 Content-type: application/json
-Authorization: Bearer TnPYhGwUoe0OfhRg1R2rt1AMasM6XmsAgEheXXutoEv2Nee2XGD_qD7ukPj_Dx9n
 
 {
     "firstName":"jacob",
@@ -26,21 +14,7 @@ Authorization: Bearer TnPYhGwUoe0OfhRg1R2rt1AMasM6XmsAgEheXXutoEv2Nee2XGD_qD7ukP
     "password":"Asdfgh1*",
     "email":"luc@example.com",
     "phoneNumber":"333-333-333",
-    "country":"Brasil",
-    "goals":[
-        {
-            "goalName":"create an account",
-            "startDate":"01-01-2023",
-            "endDate":"03-15-2023",
-            "plan":"get visa"
-          
-        },{
-            "goalName":"Start collage",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"study for the exam"
-        }
-      ]   
+    "country":"Brasil"
 }
 
 ###
@@ -54,21 +28,7 @@ Content-type: application/json
     "password":"asdfgh",
     "email":"luc@example.com",
     "phoneNumber":"333-333-333",
-    "country":"Brasil",
-    "goals":[
-        {
-            "goalName":"create an account",
-            "startDate":"01-01-2023",
-            "endDate":"03-15-2023",
-            "plan":"get visa"
-          
-        },{
-            "goalName":"Start collage",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"study for the exam"
-        }
-      ]   
+    "country":"Brasil" 
 }
 
 ### 
@@ -93,21 +53,7 @@ Content-type: application/json
     "password":"asdfg",
     "email":"luc@example.com",
     "phoneNumber":"333-333-333",
-    "country":"Brasil",
-    "goals":[
-        {
-            "goalName":"travel to USA",
-            "startDate":"01-01-2023",
-            "endDate":"03-15-2023",
-            "plan":"get visa"
-          
-        },{
-            "goalName":"Start collage",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"study for the exam"
-        }
-      ]   
+    "country":"Brasil" 
 }
 ###
 PUT https://cse341-project-2.onrender.com/user/63cb55dsfsdfdsf HTTP/1.1 
@@ -120,22 +66,72 @@ Content-type: application/json
     "password":"asdfgh",
     "email":"luc@example.com",
     "phoneNumber":"333-333-333",
-    "country":"Brasil",
-    "goals":[
-        {
-            "goalName":"create an account",
-            "startDate":"01-01-2023",
-            "endDate":"03-15-2023",
-            "plan":"get visa"
-          
-        },{
-            "goalName":"Start collage",
-            "startDate":"01-01-2023",
-            "endDate":"06-01-2023",
-            "plan":"study for the exam"
-        }
-      ]   
+    "country":"Brasil" 
 }
 
 ### 
 DELETE https://cse341-project-2.onrender.com/user/63c9cc54ecac4b74c25a06da
+
+
+### request for goals
+GET http://localhost:3000/goal
+### 
+GET http://localhost:3000/goal/63c9629eae95064f8aac80bc
+
+###
+POST http://localhost:3000/goal HTTP/1.1 
+Content-type: application/json
+{
+    "userName":"lucoli",
+    "goalName":"Start collage",
+    "startDate":"01-01-2023",
+    "endDate":"06-01-2023",
+    "plan":"study for the exam"
+}
+
+###
+PUT http://localhost:3000/goal/dsfsdfsdf HTTP/1.1 
+Content-type: application/json
+
+{
+    "userName":"lucoli",
+    "goalName":"travel",
+    "startDate":"01-01-2023",
+    "endDate":"03-15-2023",
+    "plan":"get visa"
+}
+
+### 
+DELETE http://localhost:3000/goal/63d4922b72d08d9a19a45bab
+
+###
+GET https://cse341-project-2.onrender.com/goal
+
+### 
+GET https://cse341-project-2.onrender.com/goal/63c9629eae95064f8aac80bc
+
+### 
+POST https://cse341-project-2.onrender.com/goal HTTP/1.1 
+Content-type: application/json
+
+{
+    "userName":"lucoli",
+    "goalName":"travel to USA",
+    "startDate":"01-01-2023",
+    "endDate":"03-15-2023",
+    "plan":"get visa"
+}
+###
+PUT https://cse341-project-2.onrender.com/goal/63cb55dsfsdfdsf HTTP/1.1 
+Content-type: application/json
+
+{
+    "userName":"lucoli",
+    "goalName":"create an account",
+    "startDate":"01-01-2023",
+    "endDate":"03-15-2023",
+    "plan":"password"  
+}
+
+### 
+DELETE https://cse341-project-2.onrender.com/goal/63c9cc54ecac4b74c25a06da
