@@ -27,9 +27,6 @@ const getSingle = async (req, res, next) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists[0]);  
     })
-    .catch(error => {
-      res.status(400).json({ message: err });
-      console.error(error)})
   };
 
   const createSingle = async (req, res, next) => {
