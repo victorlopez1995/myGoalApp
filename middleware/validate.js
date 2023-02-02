@@ -22,4 +22,25 @@ const saveUser = (req, res, next) => {
   });
 };
 
-module.exports = {saveUser};
+const saveGoal = (req, res, next) => {
+  const validationRule = {
+    userName: 'required|string',
+    goalName: 'required|string',
+    startDate: 'required|string',
+    endDate: 'required|string',
+    plan: 'required|email',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+module.exports = {saveUser, saveGoal};
