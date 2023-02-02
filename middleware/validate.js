@@ -28,7 +28,7 @@ const saveGoal = (req, res, next) => {
     goalName: 'required|string',
     startDate: 'required|string',
     endDate: 'required|string',
-    plan: 'required|email',
+    plan: 'required|string',
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
