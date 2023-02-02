@@ -18,6 +18,7 @@ const getAll = async (req, res, next) => {
 const getSingle = async (req, res, next) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to find a user.');
+    return
   }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -28,9 +29,10 @@ const getSingle = async (req, res, next) => {
     result.toArray().then((err,lists) => {
       if (err) {
         res.status(400).json({ message: err });
-      }
+      }else{
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists[0]);
+      }
     });
   };
 
@@ -68,6 +70,7 @@ const getSingle = async (req, res, next) => {
   const updateSingle = async (req, res, next) =>{
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid user id to find a user.');
+      return;
     }else{
       const password = req.body.password;
       const passwordCheck = passwordUtil.passwordPass(password);
@@ -104,6 +107,7 @@ const getSingle = async (req, res, next) => {
   const deleteSingle = async (req, res, next) =>{
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid user id to find a user.');
+      return;
     }
     const userId = new ObjectId(req.params.id);
     const contact = req.body;
